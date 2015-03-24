@@ -1,0 +1,20 @@
+﻿<div class="row comment">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content black-text">
+        <span class="card-title black-text comment-pad">{{comment.title}}</span> 
+        {{comment.by}} on <span class="grey-date">{{comment.date}}</span>
+        <p>
+          {{comment.content}}
+        </p>
+      </div>
+      <div class="card-action" ng-show="comment.replies.length">
+        <div class="row comment">
+          <div class="col offset-s1 s11">
+            <comment-block ng-repeat="comment in comment.replies"></comment-block>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

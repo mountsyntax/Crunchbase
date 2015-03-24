@@ -1,0 +1,175 @@
+﻿<div class="row">
+  <div class="col s12 m4">
+    <div class="card">
+      <div class="card-image">
+        <img ng-src="{{org.image}}">
+        <span class="card-title">{{org.name}}</span>
+      </div>
+      <div class="card-content">
+        <p>
+          {{org.short_description}}
+        </p>
+      </div>
+      <div class="card-action">
+        <web-link ng-repeat="site in web"></web-link>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m8">
+    <div class="row">
+      <div class="col s6">
+        <div class="card-panel light-blue darken-1">
+          <span class="white-text">
+            Web Page: <br />
+            {{org.homepage_url}} <br />
+            <span ng-show="org.email_address">
+              Email: <br />
+              {{org.email_address}} <br />
+            </span>
+            Founded: <br />
+            {{org.founded_on}}<br />
+            <span ng-show="org.num_employees_max">
+              # Employees: <br />
+              {{org.num_employees_min}}- {{org.num_employees_max}} <br />
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="col s6">
+        <div ng-show="org.number_of_investments" class="card-panel light-blue darken-1">
+          <span class="white-text">
+            Total Invesment: <br />
+            ${{org.total_funding_usd}} <br />
+            Rounds: <br />
+            {{funding.length}}<br />
+            Total Investers: <br />
+            {{investors.length}}<br />
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content">
+            <p>{{org.description}}</p>
+          </div>
+          <div class="card-action">
+            <span class="strong-text">Categories:</span>
+            <a ng-repeat="category in categories" href="">{{category.name}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+
+
+<div ng-show="meta.people">
+  <div id="people-header" class="special-collapsible" ng-click="vm.toggle('people');">
+    <h4 class="header">People <span class="badge">{{meta.people}}</span></h4>
+    <div class="divider"></div>
+  </div>
+  <div id="people-body" style="display: none;">
+    <br />
+
+    <div ng-show="team.length">
+      <h5 class="header">Team</h5>
+      <div class="row">
+        <person-block ng-repeat="person in team"></person-block>
+      </div>
+    </div>
+
+    <div ng-show="board.length">
+      <h5 class="header">Board</h5>
+      <div class="row">
+        <person-block ng-repeat="person in board"></person-block>
+      </div>
+    </div>
+
+    <div ng-show="investors.length">
+      <h5 class="header">Investors</h5>
+      <div class="row">
+        <investor-block ng-repeat="investor in investors"></investor-block>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div ng-show="products.length">
+  <div id="products-header" class="special-collapsible" ng-click="vm.toggle('products');">
+    <h4 class="header">Products <span class="badge">{{products.length}}</span></h4>
+    <div class="divider"></div>
+  </div>
+  <div id="products-body" style="display: none;">
+    <br />
+    <div class="row">
+      <product-block ng-repeat="product in products"></product-block>
+    </div>
+  </div>
+</div>
+
+<div ng-show="news.length">
+  <div id="news-header" class="special-collapsible" ng-click="vm.toggle('news');">
+    <h4 class="header">News <span class="new badge">{{news.length}}</span></h4>
+    <div class="divider"></div>
+  </div>
+  <div id="news-body" style="display: none;">
+    <br />
+
+    <div class="collection">
+      <a ng-repeat="item in news" href="{{item.url}}" target="_blank" class="collection-item">
+        <span class="black-text">{{item.title}}</span><br />
+        {{item.author}} on <span class="grey-date">{{item.posted_on}}</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div ng-show="meta.intel">
+  <div id="intel-header" class="special-collapsible" ng-click="vm.toggle('intel');">
+    <h4 class="header">More Intel <span class="badge">{{meta.intel}}</span></h4>
+    <div class="divider"></div>
+  </div>
+  <div id="intel-body" style="display: none;">
+    <br />
+
+    <div ng-show="funding.length">
+      <h5 class="header">Funding Rounds</h5>
+      <div class="row">
+        <ul class="collection">
+          <li class="collection-item avatar" ng-repeat="item in funding">
+            <i class="mdi-maps-local-atm circle green"></i>
+            <span class="title">{{item.name}}</span>
+            <p>Closed <span class="grey-date">unknown</span></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div ng-show="acquisitions.length">
+      <h5 class="header">Acquisitions</h5>
+      <div class="row">
+        <ul class="collection">
+          <li class="collection-item avatar" ng-repeat="item in acquisitions">
+            <i class="mdi-editor-attach-money circle green lighten-2"></i>
+            <span class="title">{{item.name}}</span>
+            <p>Announced on <span class="grey-date">{{item.announced_on}}</span></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div ng-show="competitors.length">
+      <h5 class="header">Competitors</h5>
+      <div class="row">
+        <organization-block ng-repeat="organization in competitors"></organization-block>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4 class="header">Comments</h4>
+<div class="divider"></div>
+<br />
+<comment-block ng-repeat="comment in comments"></comment-block>

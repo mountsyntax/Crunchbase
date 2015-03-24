@@ -1,0 +1,63 @@
+﻿<div class="row">
+  <div class="col s12 m4">
+    <div class="card">
+      <div class="card-image">
+        <img ng-src="{{person.image}}">
+        <span class="card-title">{{person.first_name}} {{person.last_name}}</span>
+      </div>
+      <div class="card-content">
+        <p>
+          {{person.bio}}
+        </p>
+      </div>
+      <div class="card-action">
+        <web-link ng-repeat="site in web"></web-link>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m4">
+    <div ng-show="founded.length">
+      <h5 class="header">Founded <span class="badge">{{founded.length}}</span></h5>
+      <div class="divider"></div>
+      <br />
+      <div class="row">
+        <experience-block ng-repeat="position in founded"></experience-block>
+      </div>
+    </div>
+    <div ng-show="experience.length">
+      <h5 class="header">Worked At <span class="badge">{{experience.length}}</span></h5>
+      <div class="divider"></div>
+      <br />
+      <div class="row">
+        <experience-block ng-repeat="position in experience"></experience-block>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m4">
+    <div ng-show="degrees.length">
+      <h5 class="header">Degrees <span class="badge">{{degrees.length}}</span></h5>
+      <div class="divider"></div>
+      <br />
+      <div class="row">
+        <degree-block ng-repeat="degree in degrees"></degree-block>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div ng-show="news.length">
+  <div id="news-header" class="special-collapsible" ng-click="vm.toggle('news');">
+    <h4 class="header">News <span class="new badge">{{news.length}}</span></h4>
+    <div class="divider"></div>
+  </div>
+  <div id="news-body" style="display: none;">
+    <br />
+
+    <div class="collection">
+      <a ng-repeat="item in news" href="{{item.url}}" target="_blank" class="collection-item">
+        <span class="black-text">{{item.title}}</span><br />
+        {{item.author}} on <span class="grey-date">{{item.posted_on}}</span>
+      </a>
+    </div>
+  </div>
+</div>

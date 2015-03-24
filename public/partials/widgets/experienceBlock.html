@@ -1,0 +1,12 @@
+﻿<div class="col s6">
+  <div class="organization card-panel light-blue darken-1 center white-text">
+    <i class="mdi-action-assessment"></i>
+    <span ng-show="position.organization_name">
+      <span class="name"><a href="#/{{position.organization_path}}">{{position.organization_name}}</a></span><br />
+      <span>{{position.title}}</span>
+    </span>
+    <span ng-show="position.name">
+      <span class="name"><a href="#/{{position.path}}">{{position.name}}</a></span>
+    </span>
+  </div>
+</div>

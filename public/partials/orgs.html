@@ -1,0 +1,25 @@
+﻿<h4 class="header">Organizations</h4>
+
+<ul class="pagination">
+  <li class="disabled"><a href=""><i class="mdi-navigation-chevron-left"></i></a></li>
+  <li id="orgsP1" class="active waves-effect"><a ng-click="vm.goToPage(1)">1</a></li>
+  <li id="orgsP2" class="waves-effect"><a ng-click="vm.goToPage(2)">2</a></li>
+  <li id="orgsP3" class="waves-effect"><a ng-click="vm.goToPage(3)">3</a></li>
+  <li id="orgsP4" class="waves-effect"><a ng-click="vm.goToPage(4)">4</a></li>
+  <li id="orgsP5" class="waves-effect"><a ng-click="vm.goToPage(5)">5</a></li>
+  <li class="waves-effect"><a href=""><i class="mdi-navigation-chevron-right"></i></a></li>
+</ul>
+
+<br />
+<br />
+
+<ul class="collection">
+  <li ng-repeat="org in orgs" class="collection-item avatar">
+    <i class="mdi-action-assessment circle light-blue lighten-4"></i>
+    <span class="title">{{org.name}}</span>
+    <p class="details">
+      <a href="#/{{org.path}}">Details <i class="details-arrow mdi-navigation-arrow-forward"></i></a>
+    </p>
+    <star-block></star-block>
+  </li>
+</ul>

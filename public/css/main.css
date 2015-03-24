@@ -1,0 +1,117 @@
+﻿html {
+  font-family: GillSans, Calibri, Trebuchet, sans-serif;
+}
+
+body {
+  font-weight: 300;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.pagination li.active {
+  background-color: #0288d1;
+}
+
+.header {
+  color: #01579b;
+}
+
+.collection .collection-item.avatar {
+  height: 64px;
+  font-weight: 600;
+}
+
+.collection .details {
+  font-weight: 400;
+}
+
+.collection .details-arrow {
+  font-size: 12px;
+}
+
+.star-base {
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.unstarred {
+  color: #e0e0e0;
+}
+
+.unstarred:hover {
+  color: #fdd835;
+}
+
+.starred {
+  color: #fdd835;
+}
+
+.starred:hover {
+  color: #e0e0e0;
+}
+
+.generic-link {
+  font-size: 28px;
+  color: #000000;
+}
+
+.strong-text {
+  font-weight: 600;
+  margin-right: 12px;
+}
+
+.special-collapsible {
+  cursor: pointer;
+}
+
+.grey-date {
+  color: #b0b0b0;
+}
+
+.comment-pad {
+  padding-right: 20px;
+}
+
+.comment {
+  margin-bottom: 0;
+}
+
+.person,
+.investor,
+.organization {
+  height: 260px;
+}
+
+.product {
+  height: 220px;
+}
+
+.degree {
+  height: 320px;
+}
+
+.person i,
+.investor i,
+.product i,
+.organization i,
+.degree i {
+  color: #ffffff;
+  font-size: 6rem;
+  display: block;
+}
+
+.person .name a,
+.investor .name a,
+.product .name a,
+.organization .name a,
+.degree .name a {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+}

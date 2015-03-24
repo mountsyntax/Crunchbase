@@ -1,0 +1,7 @@
+﻿<div class="col s6 m4 l2">
+  <div class="investor card-panel light-blue darken-1 center white-text">
+    <i class="mdi-action-account-box" ng-show="investor.type=='Person'"></i>
+    <i class="mdi-action-assessment" ng-show="investor.type=='Organization'"></i>
+    <span class="name"><a href="#/{{investor.path}}">{{investor.name}}{{investor.first_name}} {{investor.last_name}}</a></span><br />
+  </div>
+</div>
